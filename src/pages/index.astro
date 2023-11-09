@@ -1,0 +1,37 @@
+---
+import Layout from '../layouts/Layout.astro'
+
+import Hero from '../components/Hero.astro'
+import Services from '../components/Services.astro'
+import Techs from '../components/Techs.astro'
+import Works from '../components/Works.astro'
+import Projects from '../components/Projects.astro'
+import Contact from '../components/Contact.astro'
+import ReactSVG from '../components/ReactSVG.astro'
+import AstroSVG from '../components/AstroSVG.astro'
+import NodeSVG from '../components/NodeSVG.astro'
+---
+
+<Layout
+  title='Lautaro Della Mea'
+  description='Te doy la bienvenida a mi sitio web personal! Aquí, puedes obtener información detallada sobre mí y explorar mi experiencia y habilidades. Si estás interesado en colaborar, contratarme o tienes alguna consulta, no dudes en ponerte en contacto conmigo. ¡Estoy deseando escucharte!'
+>
+  <main>
+    <ReactSVG />
+    <AstroSVG />
+    <NodeSVG />
+    <Hero />
+    <Services />
+    <Techs />
+    <Works />
+    <Projects />
+    <Contact />
+  </main>
+</Layout>
+
+<style>
+  main {
+    position: relative;
+    overflow: hidden;
+  }
+</style>

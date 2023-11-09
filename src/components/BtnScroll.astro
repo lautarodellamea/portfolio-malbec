@@ -1,0 +1,83 @@
+<button id='myBtn' title='Go to top'
+  ><svg
+    width='40'
+    height='20'
+    viewBox='0 0 49 29'
+    fill='none'
+    xmlns='http://www.w3.org/2000/svg'
+  >
+    <path
+      d='M47.2436 26.977C48.6521 25.4983 48.6521 23.1007 47.2436 21.622L29.5968 3.11541C26.7789 0.160378 22.213 0.161549 19.3965 3.11803L1.75649 21.6357C0.347833 23.1143 0.347833 25.512 1.75649 26.9906C3.16518 28.4697 5.44907 28.4697 6.85776 26.9906L21.9558 11.1416C23.3647 9.66292 25.6484 9.66292 27.057 11.1416L42.1424 26.977C43.5509 28.4557 45.835 28.4557 47.2436 26.977Z'
+      fill='#fff'></path>
+  </svg>
+</button>
+
+<style>
+  #myBtn {
+    justify-content: center;
+    align-items: center;
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 75px;
+    width: 50px;
+    height: 50px;
+    z-index: 999;
+    border: 1px solid var(--orange-color);
+    outline: none;
+    /* background: linear-gradient(to right, #ffde26, #fa8e30); */
+    background-color: var(--orange-color);
+    background-color: transparent;
+    backdrop-filter: blur(30px);
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 5px;
+    transition: all 0.1s linear;
+  }
+  #myBtn:hover {
+    /* background: linear-gradient(to right, #fa8e30, #fa8e30); */
+    background-color: var(--orange-color);
+  }
+
+  html.light #myBtn {
+    border: 1px solid var(--first-color);
+  }
+  html.light #myBtn svg path {
+    fill: var(--first-color);
+  }
+  html.light #myBtn:hover {
+    background-color: var(--first-color);
+  }
+  html.light #myBtn:hover > svg path {
+    fill: var(--white-color);
+  }
+</style>
+
+<script>
+  const d = document
+  window.onscroll = function () {
+    scrollFunction()
+  }
+
+  function scrollFunction() {
+    if (
+      document.body.scrollTop > 20 ||
+      document.documentElement.scrollTop > 20
+    ) {
+      document.getElementById('myBtn').style.display = 'flex'
+    } else {
+      document.getElementById('myBtn').style.display = 'none'
+    }
+  }
+
+  function topFunction() {
+    document.body.scrollTop = 0
+    document.documentElement.scrollTop = 0
+  }
+
+  d.addEventListener('click', (e) => {
+    if (e.target.matches('#myBtn') || e.target.closest('#myBtn')) {
+      topFunction()
+    }
+  })
+</script>

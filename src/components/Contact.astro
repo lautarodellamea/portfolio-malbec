@@ -1,0 +1,54 @@
+---
+import social from '../data/social'
+---
+
+<section id='contact' class='contact container z-front'>
+  <h2>Contacto</h2>
+  <div class='contact-data'>
+    <a href={social.mail.url} target='_blank'>{social.mail.title}</a>
+    <a href={social.tel.url} target='_blank'>{social.tel.title}</a>
+    <a href={social.location.url} target='_blank'>{social.location.title}</a>
+  </div>
+</section>
+
+<style>
+  .contact {
+    margin: 4rem auto;
+  }
+  .contact-data {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .contact-data a {
+    position: relative;
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    display: inline-block;
+    width: max-content;
+  }
+  html.light .contact-data a {
+    color: var(--text-color-2);
+  }
+
+  .contact-data a::before {
+    text-decoration: none;
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background-color: var(--second-color);
+    transition: 0.2s ease;
+  }
+  html.light .contact-data a::before {
+    background-color: var(--second-color-2);
+  }
+
+  .contact-data a:hover::before {
+    width: 100%;
+  }
+</style>

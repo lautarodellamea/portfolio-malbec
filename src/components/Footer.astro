@@ -1,0 +1,54 @@
+<footer class="footer container">
+  <div class="rights">
+    <p>
+      &copy; <span id="current-year"></span>
+      <span class="footer-name"> Lautaro Della Mea</span> | Todos los
+      <span class="footer-rights">derechos reservados</span>.
+    </p>
+  </div>
+</footer>
+
+<style>
+  .footer{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 5rem;
+  }
+
+  .footer p{
+    font-size: .8rem;
+  }
+
+  .footer-name {
+    color: var(--orange-color);
+    background: linear-gradient(to right, #ffde26, #fa8e30);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 600;
+  }
+
+  .footer-rights {
+    background: linear-gradient(to right, #09bbfc, #1266d6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 600;
+  }
+
+  @media (min-width: 792px) {
+    .footer{
+      padding-bottom: 1rem;
+    }
+  }
+  
+</style>
+
+<script>
+  // Obtén el elemento donde mostrarás el año actual
+  const añoActualElemento = document.getElementById("current-year");
+
+  // Obtén el año actual
+  const añoActual = new Date().getFullYear();
+
+  // Actualiza el contenido del elemento con el año actual
+  añoActualElemento.textContent = añoActual;
+</script>

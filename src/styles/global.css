@@ -1,0 +1,128 @@
+
+/* variables */
+:root {
+  --first-color: #0f172a;
+  --second-color: #3b82f6;
+  --second-color-2: #8ae6fb;
+  --white-color: #ffffff;
+  --black-color: #000000;
+  --text-color: #cbd5e1;
+  --text-color-2: #3e3355;
+  --gray-color: #4e6270;
+  --blue-color: #0f2d47;
+  --orange-color: #f77b10;
+  --green-color: #25d366;
+  --lime-color: #bef264;
+  --beige-color: #fef3c7;
+
+  --max-content: 792px;
+  --box-shadow: 5px 5px 10px 1px #00000023;
+  --font-family-1: "Space Grotesk", sans-serif;
+}
+
+/* reset */
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+  
+  color: var(--text-color);
+  scroll-behavior: smooth;
+  transition: all 1s linear;
+}
+
+html.light {
+  background-color: var(--first-color);
+  color: var(--text-color-2);
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: var(--font-family-1);
+  background-color: var(--white-color);
+  user-select: none;
+  -webkit-user-drag: none;
+}
+html.light body {
+
+  background-color: var(--first-color);
+}
+
+
+
+.container {
+  max-width: var(--max-content);
+  padding: 1rem;
+  margin: auto;
+}
+
+.none {
+  display: none;
+}
+
+h1 {
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  margin: 0;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  margin-bottom: .5rem;
+}
+
+h3 {
+  font-size: clamp(1.2rem, 3vw, 2rem);
+}
+
+h4 {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+}
+
+h5 {
+  font-size: clamp(0.8rem, 1.5vw, 1.2rem);
+}
+
+h6 {
+  font-size: clamp(0.7rem, 1vw, 1rem);
+}
+
+p {
+  font-size: clamp(1rem, 1.2vw, 1.2rem);
+  line-height: 1.6;
+}
+
+.z-front{
+  position: relative;
+  z-index: 10;
+}
+
+.code {
+  background-color: var(--blue-color);
+  padding: 0.1rem 0.5rem;
+  border: solid 2px var(--gray-color);
+  border-radius: 5px;
+  color: var(--text-color);
+  text-decoration: none;
+  display: inline-block;
+  margin: .5rem 0rem;
+  font-weight: 600;
+  transition: all .3s linear;
+}
+.code:hover {
+  background-color: #153b5c;
+}
+
+html.light .code {
+  background-color: var(--beige-color);
+  border: solid 2px var(--beige-color);
+  color: var(--black-color);
+}
+html.light .code:hover {
+  background-color: #ffeeac;
+}

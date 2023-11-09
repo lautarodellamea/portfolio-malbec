@@ -1,0 +1,92 @@
+---
+import '../styles/global.css'
+import '../styles/hamburgers.css'
+
+import OpenGraph from './OpenGraph.astro'
+import Favicon from './Favicon.astro'
+import GoogleFont from './GoogleFont.astro'
+import Nav from '../components/Nav.astro'
+import Footer from '../components/Footer.astro'
+import BtnScroll from '../components/BtnScroll.astro'
+import BtnWpp from '../components/BtnWpp.astro'
+
+interface Props {
+  title: string
+  description: string
+}
+
+const { title, description } = Astro.props
+---
+
+<!doctype html>
+<html lang='es'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width' />
+    <meta name='title' content={title} />
+    <meta name='description' content={description} />
+    <Favicon />
+    <GoogleFont />
+    <OpenGraph />
+    <meta name='generator' content={Astro.generator} />
+    <title>{title}</title>
+    <!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
+    <link rel='canonical' href='http://lautarodellamea.com.ar/' />
+  </head>
+  <body>
+    <div id='capa-bg' class='capa-bg2 ejecutando-animacion'></div>
+    <main class='main'>
+      <Nav />
+      <slot />
+      <div class='btns-scroll-wpp'>
+        <Footer />
+        <BtnWpp />
+        <BtnScroll />
+      </div>
+    </main>
+    <style>
+      @import 'transition-style';
+
+      @keyframes in-circle-swoop {
+        from {
+          clip-path: var(--circle-top-right-out);
+        }
+        to {
+          clip-path: var(--circle-bottom-right-in);
+        }
+      }
+
+      .capa-bg2 {
+        position: fixed;
+        background-color: var(--first-color);
+        width: 100vw;
+        height: 100vh;
+        z-index: 3;
+      }
+
+      html.light .capa-bg2 {
+        background-color: var(--white-color);
+      }
+
+      /* Aplicar la animación */
+      .ejecutando-animacion {
+        animation: in-circle-swoop 0.8s ease-in-out;
+      }
+
+      .main {
+        position: relative;
+        z-index: 5;
+      }
+      .btns-scroll-wpp {
+        display: flex;
+      }
+
+      .capa-bg {
+      }
+
+      html.light .capa-bg {
+        background-color: var(--white-color);
+      }
+    </style>
+  </body>
+</html>

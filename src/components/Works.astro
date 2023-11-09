@@ -1,0 +1,71 @@
+---
+import works from '../data/works'
+---
+
+<section id='works' class='works container z-front'>
+  <h2>Trabajos</h2>
+  <p>
+    Estos son algunos de los proyectos que he desarrollado en colaboración con
+    clientes, con el objetivo de proporcionar soluciones a medida y satisfacer
+    sus necesidades específicas. A través de estas colaboraciones, he
+    fortalecido mi capacidad para comunicarme eficazmente, trabajar en equipo y
+    entregar resultados de calidad.
+  </p>
+  <ul>
+    {
+      works.map((work) => (
+        <li>
+          <a href={work.url} target='_blank'>
+            {work.title}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</section>
+
+<style>
+  .works {
+    margin: 4rem auto;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    list-style: circle;
+    padding-left: 1rem;
+    margin-top: 1rem;
+  }
+
+  a {
+    text-decoration: none;
+    color: var(--text-color);
+    position: relative;
+    font-weight: 700;
+    color: var(--white-color);
+  }
+  html.light a {
+    color: var(--text-color-2);
+  }
+
+  a::before {
+    text-decoration: none;
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background-color: var(--second-color);
+    transition: 0.2s ease;
+  }
+
+  html.light a::before {
+    background-color: var(--second-color-2);
+  }
+
+  a:hover::before {
+    width: 100%;
+  }
+</style>

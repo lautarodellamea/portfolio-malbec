@@ -1,0 +1,105 @@
+---
+import projects from '../data/projects'
+---
+
+<section id='projects' class='projects container z-front'>
+  <h2>Proyectos</h2>
+  <p>
+    Estos son algunos de los proyectos que he desarrollado con el objetivo de
+    fortalecer y aplicar mis habilidades técnicas. Cada proyecto representa un
+    desafío único que me ha permitido ampliar mi conocimiento y experiencia en
+    el campo. A través de estos, he adquirido un entendimiento más profundo de
+    diversas tecnologías y he fortalecido mis capacidades para resolver
+    problemas de manera efectiva y creativa. Cada línea de código representa mi
+    dedicación y pasión por el desarrollo de software, y cada proyecto refleja
+    mi compromiso con el aprendizaje continuo y el crecimiento profesional.
+  </p>
+  <ul>
+    {
+      projects.map((project) => (
+        <li class='project-li'>
+          <a class='project-deploy' target='_blank' href={project.url}>
+            >_{project.title}
+          </a>
+          <a class='project-repo' target='_blank' href={project.repo}>
+            Repo
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</section>
+
+<style>
+  .projects {
+    margin: 4rem auto;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    justify-content:;
+    margin-top: 1rem;
+    gap: 1rem;
+    list-style: circle;
+
+    list-style: circle;
+    /* color: var(--text-color); */
+  }
+
+  .project-li {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .project-deploy {
+    text-decoration: none;
+    color: var(--text-color);
+    position: relative;
+    font-weight: 700;
+    color: var(--white-color);
+  }
+  html.light .project-deploy {
+    color: var(--text-color-2);
+  }
+
+  .project-deploy::before {
+    text-decoration: none;
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background-color: var(--second-color);
+    transition: 0.2s ease;
+  }
+  html.light .project-deploy::before {
+    background-color: var(--second-color-2);
+  }
+
+  .project-deploy:hover::before {
+    width: 100%;
+  }
+
+  .project-repo {
+    text-decoration: none;
+  }
+  .project-repo {
+    background-color: transparent;
+    color: var(--text-color);
+    border: solid 1px var(--text-color);
+    border-radius: 5px;
+    padding: 0rem 0.2rem;
+    margin-left: 1rem;
+    font-weight: 600;
+  }
+  html.light .project-repo {
+    color: var(--text-color-2);
+  }
+
+  .project-repo:hover {
+    background-color: var(--text-color);
+    color: var(--first-color);
+  }
+</style>

@@ -1,0 +1,98 @@
+---
+import social from '../data/social'
+---
+
+<section class='hero container z-front'>
+  <div class='h1-container'>
+    <h1 class='hero-h1'>Lautaro Della Mea</h1>
+    <div class='line-h1'></div>
+  </div>
+  <p>
+    Mi nombre es Lautaro Della Mea, soy desarrollador Front End con una solida
+    experiencia en el desarrollo de aplicaciones web. Me apasiona aprender
+    nuevas tecnologías y aplicar mis conocimientos para ayudar a otros a
+    alcanzar sus objetivos. Soy un profesional comprometido con la calidad y la
+    excelencia en todo lo que hago. Disfruto trabajando en equipo y me
+    comprometo a mantenerme actualizado en mi campo. <br /> Aparte de realizar
+    trabajos freelance, estoy buscando oportunidades para formar parte de un
+    equipo de IT en una empresa donde pueda desarrollarme profesionalmente y
+    contribuir con mis habilidades. <br /> Si estás interesado o tienes alguna
+    pregunta, no dudes en ponerte en contacto conmigo, ¡trabajemos juntos!.
+  </p>
+  <div class='hero-btns'>
+    <a href={social.cv.url} target='_blank' class='code'
+      ><code>{social.cv.title}</code></a
+    >
+    <a href={social.github.url} target='_blank' class='code'
+      ><code>{social.github.title}</code></a
+    >
+    <a href={social.linkedin.url} target='_blank' class='code'
+      ><code>{social.linkedin.title}</code></a
+    >
+  </div>
+</section>
+
+<style>
+  .hero {
+    margin: 4rem auto;
+  }
+
+  .h1-container {
+    position: relative;
+    display: flex;
+    /* justify-content: center; */
+    margin-bottom: 1rem;
+  }
+
+  .hero-h1 {
+    position: relative;
+    text-decoration: none;
+    padding: 0.3rem 0;
+    color: var(--white-color);
+    display: inline-block;
+    z-index: 60;
+    text-align: center;
+    transition: all 0.5s linear;
+  }
+
+  html.light .hero-h1 {
+    color: var(--text-color-2);
+  }
+
+  .line-h1 {
+    height: 1.2rem;
+    width: 90%;
+    margin: 0 auto;
+    background-color: var(--second-color);
+    position: absolute;
+    left: 0;
+    right: 0;
+    transform: translate(0, 140%);
+    transition: all 0.5s linear;
+  }
+  html.light .line-h1 {
+    background-color: var(--second-color-2);
+  }
+  .hero-btns {
+    display: flex;
+    /* justify-content: center; */
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  @media (min-width: 792px) {
+    .h1-container {
+      justify-content: center;
+    }
+
+    .line-h1 {
+      height: 1.6rem;
+      width: 60%;
+      transform: translate(0, 180%);
+    }
+
+    .hero-btns {
+      justify-content: center;
+    }
+  }
+</style>
